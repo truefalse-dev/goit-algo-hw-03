@@ -41,7 +41,7 @@ def get_numbers_ticket(_min: int, _max: int, _qty: int) -> list:
     # iterate by range of _qty
     for _ in range(_qty):
         # append random number in range _min, _max
-        res = random_exclude(_min, _max);
+        res = random_exclude(_min, _max)
         if res is not None:
             _list.append(res)
 
