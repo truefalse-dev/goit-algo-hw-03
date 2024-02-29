@@ -20,7 +20,8 @@ def get_upcoming_birthdays(_users: list) -> list:
     date_today = datetime.today().date()
 
     # define start of the week relatively today
-    start = date_today - timedelta(days=date_today.weekday())
+    # start = date_today - timedelta(days=date_today.weekday())
+    start = date_today  # change start from today
 
     # define row of weekdays from start
     weekdays = [start + timedelta(days=x) for x in range(0, 7)]
@@ -56,9 +57,17 @@ def get_upcoming_birthdays(_users: list) -> list:
 
 
 users = [
-    {"name": "John Doe", "birthday": "1985.02.27"},
-    {"name": "Jane Smith", "birthday": "1990.03.02"},
-    {"name": "Maria", "birthday": "1982.02.27"}
+    {'name': 'Nick Darsel', 'birthday': '1984.02.27'},
+    {'name': 'Jake Smith', 'birthday': '1990.02.28'},
+    {'name': 'Jake Smith', 'birthday': '1984.02.29'},
+    {'name': 'John Doe', 'birthday': '1985.03.01'},
+    {'name': 'Ethan Williams', 'birthday': '1970.03.02'},
+    {'name': 'Smith Smith', 'birthday': '1990.03.03'},
+    {'name': 'Liam Smith', 'birthday': '1995.03.04'},
+    {'name': 'Liam Smith', 'birthday': '1995.03.05'},
+    {'name': 'Mohel Smith', 'birthday': '1995.03.06'},
+    {'name': 'John Dark', 'birthday': '1985.03.07'},
+    {'name': 'Mary Dark', 'birthday': '1985.03.08'}
 ]
 
 upcoming_birthdays = get_upcoming_birthdays(users)

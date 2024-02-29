@@ -25,7 +25,7 @@ def random_exclude(range_start: int, range_end: int):
 
     # set value = 0 if reaching recursive depth
     except RecursionError:
-        value = 0
+        value = None
 
     return value
 
@@ -41,7 +41,9 @@ def get_numbers_ticket(_min: int, _max: int, _qty: int) -> list:
     # iterate by range of _qty
     for _ in range(_qty):
         # append random number in range _min, _max
-        _list.append(random_exclude(_min, _max))
+        res = random_exclude(_min, _max);
+        if res is not None:
+            _list.append(res)
 
     # sort ascending
     _list.sort()
@@ -50,4 +52,4 @@ def get_numbers_ticket(_min: int, _max: int, _qty: int) -> list:
     return _list
 
 
-print(get_numbers_ticket(3, 49, 6))
+print(get_numbers_ticket(10, 15, 5))
