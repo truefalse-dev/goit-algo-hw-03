@@ -1,8 +1,6 @@
 import random
 
 
-# define excludes row
-
 def random_exclude(range_start: int, range_end: int, excludes):
     """
     :param range_start:
