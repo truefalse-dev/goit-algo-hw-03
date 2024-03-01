@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
 
-def next_monday(_datetime: datetime) -> datetime:
+def next_monday(_datetime) -> datetime:
     """
     :param _datetime:
     :return:
@@ -40,7 +40,7 @@ def get_upcoming_birthdays(_users: list) -> list:
             continue
 
         # conditions then birthday upcoming and will be in current week
-        if date_birthday > date_today and date_birthday in weekdays:
+        if date_birthday >= date_today and date_birthday in weekdays:
 
             # move greeting to next monday if birthday in this weekend
             if date_birthday.weekday() in (5, 6):

@@ -21,7 +21,7 @@ def random_exclude(range_start: int, range_end: int, excludes):
             # append to excludes row
             excludes.append(value)
 
-    # set value = 0 if reaching recursive depth
+    # set None if reaching recursive depth
     except RecursionError:
         value = None
 
@@ -47,6 +47,10 @@ def get_numbers_ticket(_min: int, _max: int, _qty: int) -> list:
         res = random_exclude(_min, _max, _excludes)
         if res is not None:
             _list.append(res)
+
+    # check if length equals quantity
+    if len(_list) < _qty:
+        return []
 
     # sort ascending
     _list.sort()
